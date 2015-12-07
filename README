@@ -12,9 +12,6 @@
       - Tìm kiếm địa điểm và thông tin chi tiết địa điểm được thực hiện bởi Google Maps SDK
       - Request lên server được sử dụng bởi Alamofire class, đây là Framework giúp tăng tốc việc lấy dữ liệu từ server và đồng bộ trong quá trình request
       - Json được trả về được map với Model GooglePlaceObject bằng ObjectMapper - thư viện hỗ trợ cho việc tạo Object từ Json
-      - Mỗi lần query Google Maps Server chỉ trả về tối đa 60 results được chia làm 3 page result. Do đó em xử lí
-      nếu results có nhiều hơn 1 page thì page đầu tiên sẽ được load lên trước tiên, nếu người dùng scroll UITableView
-      xuống hàng cuối cùng thì mới request để load result từ page kế tiếp về và hiển thị lên, cứ như vậy cho đến page
-      thứ 3. Thêm một lí do nữa là nếu request liên tục page kế tiếp ngay sau khi request một page result thì server
+      - Mỗi lần query Google Maps Server chỉ trả về tối đa 60 results được chia làm 3 page result. Do đó em xử lí nếu results có nhiều hơn 1 page thì page đầu tiên sẽ được load lên trước tiên, nếu người dùng scroll UITableView xuống hàng cuối cùng thì mới request để load result từ page kế tiếp về và hiển thị lên, cứ như vậy cho đến page thứ 3. Thêm một lí do nữa là nếu request liên tục page kế tiếp ngay sau khi request một page result thì server
       Google Maps có thể sẽ trả về Invalid Request, vì vậy request kế tiếp phải sau request trước đó ít nhất 3s (con
       số này là do em test ra :D)
