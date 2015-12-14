@@ -1,6 +1,0 @@
-framework module Pods_SearchNearbyPlacesTests {
-  umbrella header "Pods-SearchNearbyPlacesTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
